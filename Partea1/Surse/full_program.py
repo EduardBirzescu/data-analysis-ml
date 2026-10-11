@@ -55,7 +55,7 @@ plt.rcParams["figure.figsize"] = (8, 5)
 print("\nHistogramele pentru variabilele numerice ale datelor de train")
 
 for col in numerical_cols:
-    sns.histplot(data = train_clean, x = col, kde = True, bins = 20)
+    sns.histplot(data = train_clean, x = col, kde = True, bins = 20, color = "steelblue")
     plt.title(f"Distributia valorii: {col}")
     plt.xlabel(col)
     plt.ylabel("Frecventa")
@@ -66,7 +66,7 @@ for col in numerical_cols:
 print("\nHistogramele pentru variabilele numerice ale datelor de test")
 
 for col in numerical_cols:
-    sns.histplot(data = test_clean, x = col, kde = True, bins = 20)
+    sns.histplot(data = test_clean, x = col, kde = True, bins = 20, color = "steelblue")
     plt.title(f"Distributia valorii: {col}")
     plt.xlabel(col)
     plt.ylabel("Frecventa")
@@ -78,7 +78,7 @@ for col in numerical_cols:
 print("\nCountplot-urile pentru variabilele categorice ale datelor de train")
 
 for col in categorical_cols:
-    sns.countplot(data = train_clean, x = col)
+    sns.countplot(data = train_clean, x = col, color = "steelblue")
     plt.title(f"Distributia valorii: {col}")
     plt.xlabel(col)
     plt.ylabel("Frecventa")
@@ -89,7 +89,7 @@ for col in categorical_cols:
 print("\nCountplot-urile pentru variabilele categorice ale datelor de test")
 
 for col in categorical_cols:
-    sns.countplot(data = test_clean, x = col)
+    sns.countplot(data = test_clean, x = col, color = "steelblue")
     plt.title(f"Distributia valorii: {col}")
     plt.xlabel(col)
     plt.ylabel("Frecventa")
@@ -139,7 +139,7 @@ plt.clf()
 print("\nViolin plots pentru datele train")
 
 for col in numerical_cols:
-    sns.violinplot(data=train_clean, x = 'disease', y = col)
+    sns.violinplot(data=train_clean, x = 'disease', y = col, color = "steelblue")
     plt.title(f"{col} vs disease - violin")
     plt.tight_layout()
     plt.savefig(f"{col}_vs_disease_violin_train.png")
@@ -148,7 +148,7 @@ for col in numerical_cols:
 print("\nViolin plots pentru datele test")
 
 for col in numerical_cols:
-    sns.violinplot(data=test_clean, x = 'disease', y = col)
+    sns.violinplot(data=test_clean, x = 'disease', y = col, color = "steelblue")
     plt.title(f"{col} vs disease - violin")
     plt.tight_layout()
     plt.savefig(f"{col}_vs_disease_violin_test.png")
@@ -158,7 +158,7 @@ for col in numerical_cols:
 print("\nScatter plots pentru datele train")
 
 for col in numerical_cols:
-    sns.violinplot(data=train_clean, x = col, y = 'disease', alpha = 0.5)
+    sns.scatterplot(data=train_clean, x = col, y = 'disease', alpha = 0.5)
     plt.title(f"{col} vs disease - scatter")
     plt.tight_layout()
     plt.savefig(f"{col}_vs_disease_scatter_train.png")
@@ -167,7 +167,7 @@ for col in numerical_cols:
 print("\nScatter plots pentru datele test")
 
 for col in numerical_cols:
-    sns.violinplot(data=test_clean, x = col, y = 'disease', alpha = 0.5)
+    sns.scatterplot(data=test_clean, x = col, y = 'disease', alpha = 0.5)
     plt.title(f"{col} vs disease - scatter")
     plt.tight_layout()
     plt.savefig(f"{col}_vs_disease_scatter_test.png")
